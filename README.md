@@ -4,6 +4,17 @@ A modern replacement for [icalBuddy](https://github.com/ali-rantakari/icalBuddy)
 
 Solves the common "No calendars" error on modern macOS by using Apple's EventKit framework, which correctly handles calendar permissions.
 
+## What is CalBuddy?
+
+CalBuddy is a command-line tool that gives you direct access to your macOS calendars from the terminal. It reads events from all configured calendar accounts (iCloud, Google, Exchange, etc.) and displays them in a clean, readable format.
+
+### Why is this useful?
+
+- **Quick overview** — Check your schedule right from the terminal without opening the Calendar app
+- **Scripting & automation** — Integrate calendar data into shell scripts, cron jobs, or workflow automations
+- **AI integration** — With `--format json`, CalBuddy outputs structured calendar data that works perfectly as context for AI assistants (e.g. Claude, ChatGPT, or custom agents). This lets an AI know your schedule and help with planning
+- **Status bars & dashboards** — Display upcoming events in tools like Raycast, BetterTouchTool, or tmux
+
 ## Install
 
 ### Homebrew
