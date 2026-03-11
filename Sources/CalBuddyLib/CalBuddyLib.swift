@@ -310,8 +310,9 @@ public func printUsage() {
         tomorrow, eventsTomorrow     Show tomorrow's events
         now, eventsNow               Show currently ongoing events
         eventsFrom:<start> to:<end>  Show events in date range (yyyy-MM-dd)
-        calendars                   List available calendars
-        help                        Show this help
+        calendars                    List available calendars
+        version, -v, --version       Show version
+        help                         Show this help
 
     OPTIONS:
         -ic, --include-cals <cal1,cal2>   Only show events from these calendars
@@ -348,8 +349,11 @@ public func parseArgs(_ args: [String]) -> (command: String, startDate: Date?, e
         let arg = args[i]
 
         switch arg {
-        case "eventsToday", "today", "eventsTomorrow", "tomorrow", "eventsNow", "now", "calendars", "help":
+        case "eventsToday", "today", "eventsTomorrow", "tomorrow", "eventsNow", "now", "calendars", "help", "version":
             command = arg
+
+        case "-v", "--version":
+            command = "version"
 
         case _ where arg.hasPrefix("eventsFrom:"):
             command = "eventsRange"

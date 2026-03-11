@@ -50,6 +50,9 @@ Task {
     case "calendars":
         buddy.printCalendars()
 
+    case "version":
+        print("calbuddy \(calbuddyVersion)")
+
     case "help":
         printUsage()
 

@@ -1,11 +1,15 @@
-.PHONY: build install uninstall clean release
+.PHONY: build install uninstall clean release version
 
 PREFIX ?= /usr/local
+VERSION ?= $(shell git describe --tags --abbrev=0 2>/dev/null || echo "unknown")
 
-build:
+version:
+	echo 'public let calbuddyVersion = "$(VERSION)"' > Sources/CalBuddyLib/Version.swift
+
+build: version
 	swift build
 
-release:
+release: version
 	swift build -c release
 
 install: release

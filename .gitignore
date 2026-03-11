@@ -5,3 +5,4 @@ xcuserdata/
 DerivedData/
 .DS_Store
 .vscode/
+Sources/CalBuddyLib/Version.swift
