@@ -4,23 +4,25 @@ A modern replacement for [icalBuddy](https://github.com/ali-rantakari/icalBuddy)
 
 Solves the common "No calendars" error on modern macOS by using Apple's EventKit framework, which correctly handles calendar permissions.
 
-## Requirements
+## Install
 
-- macOS 13 (Ventura) or later
-- Swift 5.9+
-- Xcode Command Line Tools
-
-## Build & Install
+### Homebrew
 
 ```bash
-# Build
-swift build
+brew tap MartinGross/tap
+brew install calbuddy
+```
 
+### From Source
+
+Requires macOS 13+, Swift 5.9+, and Xcode Command Line Tools.
+
+```bash
 # Build release version
 make release
 
 # Install to /usr/local/bin
-make install
+sudo make install
 
 # Or install to custom location
 make install PREFIX=~/.local
