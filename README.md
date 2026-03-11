@@ -15,30 +15,6 @@ CalBuddy is a command-line tool that gives you direct access to your macOS calen
 - **AI integration** — With `--format json`, CalBuddy outputs structured calendar data that works perfectly as context for AI assistants (e.g. Claude, ChatGPT, or custom agents). This lets an AI know your schedule and help with planning
 - **Status bars & dashboards** — Display upcoming events in tools like Raycast, BetterTouchTool, or tmux
 
-## Install
-
-### Homebrew
-
-```bash
-brew tap MartinGross/tap
-brew install calbuddy
-```
-
-### From Source
-
-Requires macOS 13+, Swift 5.9+, and Xcode Command Line Tools.
-
-```bash
-# Build release version
-make release
-
-# Install to /usr/local/bin
-sudo make install
-
-# Or install to custom location
-make install PREFIX=~/.local
-```
-
 ## Usage
 
 ```bash
@@ -73,6 +49,29 @@ calbuddy eventsToday --exclude-all-day
 
 # Limit number of events
 calbuddy eventsToday --limit 5
+```
+## Install
+
+### Homebrew
+
+```bash
+brew tap MartinGross/tap
+brew install calbuddy
+```
+
+### From Source
+
+Requires macOS 13+, Swift 5.9+, and Xcode Command Line Tools.
+
+```bash
+# Build release version
+make release
+
+# Install to /usr/local/bin
+sudo make install
+
+# Or install to custom location
+make install PREFIX=~/.local
 ```
 
 ## Migrating from icalBuddy
