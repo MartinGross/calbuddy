@@ -306,10 +306,10 @@ public func printUsage() {
         calbuddy <command> [options]
 
     COMMANDS:
-        eventsToday                 Show today's events
-        eventsTomorrow              Show tomorrow's events
-        eventsFrom:<start> to:<end> Show events in date range (yyyy-MM-dd)
-        eventsNow                   Show currently ongoing events
+        today, eventsToday           Show today's events
+        tomorrow, eventsTomorrow     Show tomorrow's events
+        now, eventsNow               Show currently ongoing events
+        eventsFrom:<start> to:<end>  Show events in date range (yyyy-MM-dd)
         calendars                   List available calendars
         help                        Show this help
 
@@ -328,11 +328,11 @@ public func printUsage() {
         -f,  --format <plain|json>        Output format (default: plain)
 
     EXAMPLES:
-        calbuddy eventsToday
-        calbuddy eventsToday --format json
+        calbuddy today
+        calbuddy today --format json
         calbuddy eventsFrom:2024-01-01 to:2024-01-31
         calbuddy calendars
-        calbuddy eventsToday -ic "Work,Personal" --exclude-all-day
+        calbuddy today -ic "Work,Personal" --exclude-all-day
     """
     print(usage)
 }
@@ -348,7 +348,7 @@ public func parseArgs(_ args: [String]) -> (command: String, startDate: Date?, e
         let arg = args[i]
 
         switch arg {
-        case "eventsToday", "eventsTomorrow", "eventsNow", "calendars", "help":
+        case "eventsToday", "today", "eventsTomorrow", "tomorrow", "eventsNow", "now", "calendars", "help":
             command = arg
 
         case _ where arg.hasPrefix("eventsFrom:"):

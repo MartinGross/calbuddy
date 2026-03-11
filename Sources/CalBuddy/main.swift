@@ -23,17 +23,17 @@ Task {
     }
 
     switch parsed.command {
-    case "eventsToday":
+    case "eventsToday", "today":
         let events = buddy.fetchEvents(from: startOfDay(), to: endOfDay())
         buddy.printEvents(events)
 
-    case "eventsTomorrow":
+    case "eventsTomorrow", "tomorrow":
         let start = startOfTomorrow()
         let end = endOfDay(start)
         let events = buddy.fetchEvents(from: start, to: end)
         buddy.printEvents(events)
 
-    case "eventsNow":
+    case "eventsNow", "now":
         let now = Date()
         let events = buddy.fetchEvents(from: startOfDay(), to: endOfDay())
             .filter { !$0.isAllDay && $0.startDate <= now && $0.endDate >= now }

@@ -19,13 +19,13 @@ CalBuddy is a command-line tool that gives you direct access to your macOS calen
 
 ```bash
 # Show today's events
-calbuddy eventsToday
+calbuddy today
 
 # Show tomorrow's events
-calbuddy eventsTomorrow
+calbuddy tomorrow
 
 # Show currently ongoing events
-calbuddy eventsNow
+calbuddy now
 
 # Show events in a date range
 calbuddy eventsFrom:2024-01-01 to:2024-01-31
@@ -34,22 +34,24 @@ calbuddy eventsFrom:2024-01-01 to:2024-01-31
 calbuddy calendars
 
 # JSON output
-calbuddy eventsToday --format json
+calbuddy today --format json
 
 # Filter by calendar
-calbuddy eventsToday --include-cals "Work,Personal"
-calbuddy eventsToday --exclude-cals "Birthdays"
+calbuddy today --include-cals "Work,Personal"
+calbuddy today --exclude-cals "Birthdays"
 
 # Group by date or calendar
-calbuddy eventsToday --separate-by-date
-calbuddy eventsToday --separate-by-calendar
+calbuddy today --separate-by-date
+calbuddy today --separate-by-calendar
 
 # Exclude all-day events
-calbuddy eventsToday --exclude-all-day
+calbuddy today --exclude-all-day
 
 # Limit number of events
-calbuddy eventsToday --limit 5
+calbuddy today --limit 5
 ```
+
+> **Note:** The longer forms `eventsToday`, `eventsTomorrow`, and `eventsNow` also work for backward compatibility.
 ## Install
 
 ### Homebrew
@@ -78,7 +80,7 @@ make install PREFIX=~/.local
 
 | icalBuddy | calbuddy |
 |-----------|----------|
-| `icalBuddy eventsToday` | `calbuddy eventsToday` |
+| `icalBuddy eventsToday` | `calbuddy today` |
 | `icalBuddy eventsToday+3` | `calbuddy eventsFrom:2024-01-01 to:2024-01-04` |
 | `icalBuddy calendars` | `calbuddy calendars` |
 | `-ic "Work"` | `--include-cals "Work"` |
