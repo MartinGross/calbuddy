@@ -10,7 +10,7 @@ build: version
 	swift build
 
 release: version
-	swift build -c release
+	swift build -c release --disable-sandbox
 
 install: release
 	install -d $(PREFIX)/bin
